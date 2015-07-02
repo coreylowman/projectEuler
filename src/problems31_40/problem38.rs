@@ -1,3 +1,10 @@
+use num::traits::PrimInt;
+
+fn num_concat(x : u64,y : u64) -> u64{
+	let l = num_length(y);
+	x * 10.pow(l as u32) + y
+}
+
 fn has_all(mut a:u64) -> bool{
 	let mut digs = [0;10];
 	
@@ -28,9 +35,19 @@ fn num_length(mut n:u64) -> u64 {
 }
 
 pub fn go() -> u64 {
-	let mut i = 987654;
+	//number can't have more than 5 digits... as i.concat(2*i) would have 10 digits
+	//whereas the number we are looking for has 9
+	let mut i = 10_000;
 	loop {
-		
-		i-=1;
+		let mut n = 1;
+		let mut np = i;
+		let x = i;
+		loop {
+			n += 1;
+			np = num_concat(np,n*x);
+			if has_all(np) { return np }
+			if num_length(np) > 9 { break; }			
+		}
+		i -= 1;
 	}
 }
