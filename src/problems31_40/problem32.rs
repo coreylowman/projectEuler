@@ -31,12 +31,16 @@ fn has_all(mut a:u64,mut b:u64) -> bool{
 
 pub fn go() -> u64 {
 	let mut res : Vec<u64> = Vec::new();
-	for x in 1..5_000 {
+	//1 or 2 digit number * 3 or 4 digit number = 4 digit number = 9 digits
+	for x in 1..100 {
+		//this will produce a 0
 		if x % 10 == 0 {
 			continue;
 		}
-		for y in 1..5_000 {			
+		for y in 100..9999 {
 			let xy = x * y;
+			if xy > 9_999 { break; }			
+			//we don't want any 0s!
 			if y % 10 == 0 || xy % 10 == 0 {
 				continue;
 			}
@@ -46,9 +50,5 @@ pub fn go() -> u64 {
 		}	
 	}	
 	
-	let mut sum = 0;
-	for &x in res.iter() {
-		sum += x;
-	}
-	sum
+	res.iter().fold(0,|acc,&x| acc + x)
 }

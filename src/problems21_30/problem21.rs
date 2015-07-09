@@ -1,8 +1,10 @@
 fn d(n:u64) -> u64 {	
-	let mut sum = 0;
-	for i in 1..n {
+	let q = (n as f64).sqrt() as u64 + 1;
+	let mut sum = 1;
+	for i in 2..q {
 		if n % i == 0 {
 			sum += i;
+			sum += n / i;
 		}	
 	}
 	sum

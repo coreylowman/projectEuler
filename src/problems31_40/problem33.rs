@@ -39,7 +39,6 @@ pub fn go() -> u64 {
 	for t in 10..100 {
 		for b in t..100 {
 			if can(t,b) {
-				println!("{} {} {} {}",t,b,gcd(t,b),b / gcd(t,b));
 				bot *= b / gcd(t,b);
 				top *= t / gcd(t,b);
 			}

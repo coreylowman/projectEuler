@@ -67,7 +67,6 @@ pub fn go() -> u64 {
 	let mut mid = (start + end) / 2;
 	let mut d = num_digs(mat_exp(&fib_mat,mid).b);
 	while d != 1000 {
-		println!("{} {}",start,end);
 		mid = (start + end) / 2;
 		let f = mat_exp(&fib_mat,mid);
 		d = num_digs(f.b);

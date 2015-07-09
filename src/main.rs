@@ -1,11 +1,14 @@
 extern crate num;
+extern crate time;
 
 use std::io;
 use std::io::Write;
 use std::fs;
 use std::fs::File;
 
-mod problems1_10;
+use time::{PreciseTime};
+
+mod problems01_10;
 mod problems11_20;
 mod problems21_30;
 mod problems31_40;
@@ -71,6 +74,24 @@ fn init_next_ten(){
 	}
 }
 
+fn test_times() {
+	for pnum in 1..61 {
+		let start = PreciseTime::now();
+		match pnum {
+			1...10 => problems01_10::get_answer(pnum),
+			11...20 => problems11_20::get_answer(pnum),
+			21...30 => problems21_30::get_answer(pnum) as u64,
+			31...40 => problems31_40::get_answer(pnum),
+			41...50 => problems41_50::get_answer(pnum),
+			51...60 => problems51_60::get_answer(pnum),
+			_ => 0
+		};
+		let dur = start.to(PreciseTime::now());
+		let d = dur.num_milliseconds() as f32 / 1000f32;
+		println!("{}-{}s",pnum,d);
+	}
+}
+
 fn main() {
     println!("Which problem do you want the answer to?");
 	
@@ -83,10 +104,13 @@ fn main() {
 	let pnum : i32 = pnum.trim().parse()
 		.ok()
 		.expect("Please type a number!");
-		
+	
+	let start = PreciseTime::now();
+	
 	match pnum {
+		-1 => test_times(),
 		0 => init_next_ten(),
-		1...10 => println!("{}",problems1_10::get_answer(pnum)),
+		1...10 => println!("{}",problems01_10::get_answer(pnum)),
 		11...20 => println!("{}",problems11_20::get_answer(pnum)),
 		21...30 => println!("{}",problems21_30::get_answer(pnum)),
 		31...40 => println!("{}",problems31_40::get_answer(pnum)),
@@ -95,4 +119,8 @@ fn main() {
 		521 => println!("{}",problem521::go()),
 		_ => println!("that problem isn't done yet :("),
 	}
+	
+	let dur = start.to(PreciseTime::now());
+	let d = dur.num_milliseconds() as f32 / 1000f32;
+	println!("ran in {}s",d);
 }

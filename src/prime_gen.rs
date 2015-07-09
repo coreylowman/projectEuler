@@ -1,4 +1,67 @@
+fn qmod(mut b:u64,mut e:u64,m:u64)->u64{
+	let mut result = 1;
+	b = b % m;
+	while e > 0 {
+		if e % 2 == 1 {
+			result = (result * b) % m;
+		}
+		e = e >> 1;
+		b = (b * b) % m;
+	}
+	result
+}
+
+//https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test
+pub fn is_prime(n:u64)->bool{
+	if n <= 5 {
+		if n == 2 || n == 3 || n == 5 { return true }
+		return false
+	}
+	let k = 5;
+	let mut s = 0;
+	let mut d = n-1;
+	while d % 2 == 0 { s += 1; d /= 2; }
+	
+	let mut nums = Vec::new();
+	if n < 2047 {
+		nums.push(2);
+	}else if n < 1_373_653 {
+		nums.push(2);
+		nums.push(3);
+	}else if n < 9_080_191 {
+		nums.push(31);
+		nums.push(73);
+	}else if n < 25_326_001 {
+		nums.push(2);
+		nums.push(3);
+		nums.push(5);
+	}else if n < 4_759_123_141 {
+		nums.push(2);
+		nums.push(7);
+		nums.push(61);
+	}else{ //if n < 1_122_004_669_633
+		nums.push(2);
+		nums.push(13);
+		nums.push(23);
+		nums.push(1_662_803);
+	}
+	
+	for a in nums {
+		let mut x = qmod(a,d,n);
+		if x == 1 || x == n - 1 { continue; }
+		for _ in 0..s-1 {
+			x = (x * x) % n;
+			if x == 1 { return false }
+			if x == n - 1 { break; }		
+		}
+		if x == n - 1 { continue; }
+		return false
+	}	
+	true
+}
+
 pub fn contains(num:u64,v:&Vec<u64>) -> bool {
+	if v.len() == 0 { return false }
 	let mut l = 0;
 	let mut h = v.len() - 1;
 	while l <= h {
@@ -8,7 +71,7 @@ pub fn contains(num:u64,v:&Vec<u64>) -> bool {
 		}else if v[m] < num {
 			l = m + 1;
 		}else if num < v[m] {
-			if h == 0 {
+			if m == 0 {
 				return false
 			}
 			h = m - 1;

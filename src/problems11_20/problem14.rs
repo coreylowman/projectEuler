@@ -2,7 +2,7 @@ pub fn chain_length(mut n : u64) -> u64 {
 	let mut l = 0;
 	while n > 1 {
 		if n % 2 == 0 {
-			n /= 2;			
+			n = n >> 1;			
 		}else{
 			n = 3 * n + 1;
 		}

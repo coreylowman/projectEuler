@@ -3,26 +3,24 @@ use prime_gen;
 //num distinct prime factors
 fn num_dpfs(mut n:u64,primes:&Vec<u64>) -> u64 {
 	let mut num = 0;
-	let mut i = 0;
-   
-	if prime_gen::contains(n,primes) { return 1 };
-   
-	while n > 1 {
-		let p = primes[i];
-		if n % p == 0 {
-			num+=1;
-			while n % p == 0 {
-				n = n / p;
+	if prime_gen::contains(n,primes) { return 1 }
+	
+	let lim = (n as f64).sqrt() as u64 + 1;
+	for i in 2..lim {
+		if n % i == 0 {
+			if prime_gen::contains(i,primes) {
+				num += 1;
 			}
-		}
-		i+=1;
+			if prime_gen::contains(n / i,primes) {
+				num += 1;
+			}
+		}		
 	}
-
 	num
 }
- 
+
 pub fn go() -> u64{
-	let primes = prime_gen::gen(1_000_000);
+	let primes = prime_gen::gen(200_000);
 	let mut i = 1;
 	loop {
 		let a = num_dpfs(i,&primes) == 4;
@@ -39,5 +37,5 @@ pub fn go() -> u64{
 			i+=3;
 		}
 		i+=1;
-	}	
+	}
 }
