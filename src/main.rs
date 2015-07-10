@@ -8,7 +8,7 @@ use std::fs::File;
 
 use time::{PreciseTime};
 
-mod problems01_10;
+mod problems1_10;
 mod problems11_20;
 mod problems21_30;
 mod problems31_40;
@@ -78,7 +78,7 @@ fn test_times() {
 	for pnum in 1..61 {
 		let start = PreciseTime::now();
 		match pnum {
-			1...10 => problems01_10::get_answer(pnum),
+			1...10 => problems1_10::get_answer(pnum),
 			11...20 => problems11_20::get_answer(pnum),
 			21...30 => problems21_30::get_answer(pnum) as u64,
 			31...40 => problems31_40::get_answer(pnum),
@@ -110,7 +110,7 @@ fn main() {
 	match pnum {
 		-1 => test_times(),
 		0 => init_next_ten(),
-		1...10 => println!("{}",problems01_10::get_answer(pnum)),
+		1...10 => println!("{}",problems1_10::get_answer(pnum)),
 		11...20 => println!("{}",problems11_20::get_answer(pnum)),
 		21...30 => println!("{}",problems21_30::get_answer(pnum)),
 		31...40 => println!("{}",problems31_40::get_answer(pnum)),

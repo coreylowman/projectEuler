@@ -1,4 +1,4 @@
-pub fn is_palindrome(mut n : u64) -> bool {
+fn is_palindrome(mut n : u64) -> bool {
 	let mut digits :Vec<i8> = Vec::new();
 	while n > 0 {
 		digits.push((n % 10) as i8);
@@ -17,7 +17,6 @@ pub fn is_palindrome(mut n : u64) -> bool {
 	}
 	true
 }
-
 
 pub fn go() -> u64 {
 	let mut max = 0;

@@ -3,13 +3,7 @@ use num::{Zero,One};
 use num::traits::ToPrimitive;
  
 fn dig_sum(mut n:BigInt) -> u64{
-	let mut sum = 0.to_bigint().unwrap();
-	let t = 10.to_bigint().unwrap();
-	while n > BigInt::zero() {
-		sum = sum + (&n % &t);
-		n = n / &t;
-	}
-	sum.to_u64().unwrap()
+	n.to_string().into_bytes().iter().fold(0,|acc,&x| acc + (x - 48) as u64)
 }
  
 pub fn go() -> u64{

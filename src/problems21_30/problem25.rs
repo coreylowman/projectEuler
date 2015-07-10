@@ -50,14 +50,7 @@ fn mat_exp(f : &Mat,n : u32 ) -> Mat {
 }
 
 fn num_digs(mut n : BigInt) -> u64 {
-	let mut x = 0;
-	let ten = 10.to_bigint().unwrap();
-	let z = Zero::zero();
-	while n > z {
-		n = n / &ten;
-		x += 1;
-	}	
-	x
+	n.to_string().len() as u64
 }
 
 pub fn go() -> u64 {

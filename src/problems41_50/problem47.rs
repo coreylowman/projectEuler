@@ -1,7 +1,7 @@
 use prime_gen;
 
 //num distinct prime factors
-fn num_dpfs(mut n:u64,primes:&Vec<u64>) -> u64 {
+fn num_dpfs(n:u64,primes:&Vec<u64>) -> u64 {
 	let mut num = 0;
 	if prime_gen::contains(n,primes) { return 1 }
 	
