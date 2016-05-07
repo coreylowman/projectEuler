@@ -14,7 +14,7 @@ mod problems21_30;
 mod problems31_40;
 mod problems41_50;
 mod problems51_60;
-mod problem521;
+mod problems61_70;
 mod prime_gen;
 
 fn create_mod_contents(start:i32) -> String {
@@ -43,7 +43,7 @@ fn create_sol_contents() -> String {
 }
 
 fn init_next_ten(){
-	let start = 51;
+	let start = 61;
 	let mut fpath = String::new();
 	fpath.push_str("src/problems");
 	fpath.push_str(&start.to_string());
@@ -116,11 +116,12 @@ fn main() {
 		31...40 => println!("{}",problems31_40::get_answer(pnum)),
 		41...50 => println!("{}",problems41_50::get_answer(pnum)),
 		51...60 => println!("{}",problems51_60::get_answer(pnum)),
-		521 => println!("{}",problem521::go()),
+		61...70 => println!("{}",problems61_70::get_answer(pnum)),
 		_ => println!("that problem isn't done yet :("),
 	}
 	
 	let dur = start.to(PreciseTime::now());
-	let d = dur.num_milliseconds() as f32 / 1000f32;
-	println!("ran in {}s",d);
+	let d_ms = dur.num_milliseconds();
+	let d_s = d_ms as f32 / 1000f32;
+	println!("ran in {}s ({}ms)",d_s,d_ms);
 }

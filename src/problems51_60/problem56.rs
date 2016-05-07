@@ -1,8 +1,7 @@
 use num::bigint::{ToBigInt,BigInt};
-use num::{Zero,One};
-use num::traits::ToPrimitive;
+use num::{One};
  
-fn dig_sum(mut n:BigInt) -> u64{
+fn dig_sum(n:BigInt) -> u64{
 	n.to_string().into_bytes().iter().fold(0,|acc,&x| acc + (x - 48) as u64)
 }
  

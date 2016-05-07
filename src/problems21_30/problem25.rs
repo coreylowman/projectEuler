@@ -1,5 +1,4 @@
 use num::bigint::{BigInt,ToBigInt};
-use num::{Zero};
 
 /* 	a b
 	c d */
@@ -49,7 +48,7 @@ fn mat_exp(f : &Mat,n : u32 ) -> Mat {
 	mat_mul(f,&mat_exp(f2,(n-1)/2))
 }
 
-fn num_digs(mut n : BigInt) -> u64 {
+fn num_digs(n : BigInt) -> u64 {
 	n.to_string().len() as u64
 }
 

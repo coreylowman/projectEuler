@@ -13,11 +13,10 @@ fn qmod(mut b:u64,mut e:u64,m:u64)->u64{
 
 //https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test
 pub fn is_prime(n:u64)->bool{
-	if n <= 5 {
-		if n == 2 || n == 3 || n == 5 { return true }
-		return false
-	}
-	let k = 5;
+	if n == 1 || n == 4 { return false }
+	if n == 2 || n == 3 || n == 5 { return true }
+	if n % 2 == 0 { return false }
+	
 	let mut s = 0;
 	let mut d = n-1;
 	while d % 2 == 0 { s += 1; d /= 2; }

@@ -1,8 +1,8 @@
 //https://en.wikipedia.org/wiki/Permutation#Generation_in_lexicographic_order
 fn next_perm(mut v : [u8;10])->Option<[u8;10]>{
-	let vl = v.len();
-	let mut mk = 0;
+	let vl = v.len();	
 	let mut i = vl-2;
+	let mut mk = 0;
 	loop{
 		if v[i] < v[i+1] {
 			mk = i;
