@@ -3,6 +3,8 @@ name = "projectEuler"
 version = "0.1.0"
 authors = ["mapp <clowman1993@gmail.com>"]
 
+[lib]
+name = "util"
+
 [dependencies]
 num = "*"
-time = "*"
