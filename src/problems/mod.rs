@@ -73,6 +73,7 @@ mod problem064;
 mod problem065;
 mod problem066;
 mod problem067;
+mod problem068;
 
 pub struct Solver {
     pub current : usize,
@@ -160,6 +161,7 @@ impl Solver {
             065 => Some(problem065::solve()),
             066 => Some(problem066::solve()),
             067 => Some(problem067::solve()),
+            068 => Some(problem068::solve()),
             _ => None
         }
     }

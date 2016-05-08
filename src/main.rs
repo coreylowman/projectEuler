@@ -40,7 +40,7 @@ fn main() {
             Some(r) => {
                 println!("{}:", r.id);
                 println!("{}", r.result);
-                println!("Ran in {}s ({}ms)", r.elapsed.as_secs(), r.elapsed.subsec_nanos() / 1000000);
+                println!("Ran in {}.{}s", r.elapsed.as_secs(), r.elapsed.subsec_nanos() / 1000000);
             },
             None => println!("Problem not solved yet!"),
         }

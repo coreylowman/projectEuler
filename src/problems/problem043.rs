@@ -1,48 +1,10 @@
-//https://en.wikipedia.org/wiki/Permutation#Generation_in_lexicographic_order
-fn next_perm(mut v : [u8;10])->Option<[u8;10]>{
-	let vl = v.len();	
-	let mut i = vl-2;
-	let mk;
-	loop{
-		if v[i] < v[i+1] {
-			mk = i;
-			break;
-		}
-		if i == 0 {
-			return None
-		}
-		i-=1;
-	}
-	let mut ml = 0;
-	i = vl-1;
-	while i > mk {
-		if v[mk] < v[i] {
-			ml = i;
-			break;
-		}
-		i-=1;
-	}
-	let mut t = v[mk];
-	v[mk] = v[ml];
-	v[ml] = t;
-	
-	i = mk + 1;
-	let mut j = vl-1;
-	while i < j {
-		t = v[i];
-		v[i] = v[j];
-		v[j] = t;
-		i+=1;
-		j-=1;
-	}
-	Some(v)
-}
+use util::numbers::next_perm;
 
-fn property(digs : [u8;10])->bool{	
+fn property(digs : &Vec<u8>) -> bool {
 	if digs[5] != 5 {
 		return false
 	}
-	let arr = [2,3,5,7,11,13,17];	
+	let arr = [2,3,5,7,11,13,17];
 	for i in 1..8 {
 		let d1 = digs[i] as u32;
 		let d2 = digs[i+1] as u32;
@@ -55,7 +17,7 @@ fn property(digs : [u8;10])->bool{
 	true
 }
 
-fn to_num(digs : [u8;10])-> u64 {
+fn to_num(digs : &Vec<u8>)-> u64 {
 	let mut num : u64 = 0;
 	for &d in digs.iter() {
 		num *= 10;
@@ -66,14 +28,13 @@ fn to_num(digs : [u8;10])-> u64 {
 
 fn go() -> String{
 	let mut sum :u64 = 0;
-	let mut start : [u8;10] = [0,1,2,3,4,5,6,7,8,9];
+	let mut start = vec![0,1,2,3,4,5,6,7,8,9];
 	loop{
-		if property(start.clone()) {
-			sum += to_num(start.clone());
+		if property(&start) {
+			sum += to_num(&start);
 		}
-		match next_perm(start) {
-			Some(v) => start = v,
-			None => break,
+		if !next_perm(&mut start) {
+			break;
 		}
 	}
 	sum.to_string()

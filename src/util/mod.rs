@@ -1,4 +1,5 @@
 pub mod prime_gen;
+pub mod numbers;
 
 extern crate num;
 
