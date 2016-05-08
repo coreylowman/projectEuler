@@ -56,6 +56,8 @@ macro_rules! problem {
             let result = $main_func();
             let dur : Duration = start.elapsed();
 
+            assert_eq!(result, stringify!($right_answer).to_string());
+
             ProblemResult::new(file!().to_string(), dur, result)
         }
     );

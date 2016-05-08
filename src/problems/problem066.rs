@@ -1,7 +1,6 @@
 extern crate num;
 
 use self::num::bigint::{BigInt, ToBigInt};
-use self::num::traits::ToPrimitive;
 use self::num::traits::Signed;
 use self::num::One;
 

@@ -2,7 +2,7 @@
 fn next_perm(mut v : [u8;10])->Option<[u8;10]>{
 	let vl = v.len();	
 	let mut i = vl-2;
-	let mut mk;
+	let mk;
 	loop{
 		if v[i] < v[i+1] {
 			mk = i;

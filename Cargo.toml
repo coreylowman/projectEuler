@@ -1,5 +1,5 @@
 [package]
-name = "projectEuler"
+name = "project_euler"
 version = "0.1.0"
 authors = ["mapp <clowman1993@gmail.com>"]
 

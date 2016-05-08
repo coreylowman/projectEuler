@@ -1,5 +1,5 @@
 use std::fs::File;
-use std::io::prelude::*;
+use std::io::Read;
 
 fn score(name:&str)->u64 {
 	let mut score : u64 = 0;
