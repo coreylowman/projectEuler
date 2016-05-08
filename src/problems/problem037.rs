@@ -31,7 +31,7 @@ fn is_trunct_rev(num : u64,primes:&Vec<u64>)->bool {
 	true
 }
 
-pub fn go() -> String {
+fn go() -> String {
 	let primes = prime_gen::gen(1_000_000);
 	let mut sum = 0;
 	for &p in primes.iter() {
@@ -42,4 +42,4 @@ pub fn go() -> String {
 	sum.to_string()
 }
 
-problem!(go);
+problem!(go, 748317);

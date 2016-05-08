@@ -2,7 +2,7 @@ extern crate num;
 
 use self::num::bigint::{BigUint,ToBigUint};
 
-pub fn go() -> String {
+fn go() -> String {
 	let mut results : Vec<BigUint> = Vec::new();
 	for a in 2..101 {
 		for b in 2..101 {
@@ -21,4 +21,4 @@ pub fn go() -> String {
 	num.to_string()
 }
 
-problem!(go);
+problem!(go, 9183);

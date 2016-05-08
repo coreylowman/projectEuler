@@ -16,7 +16,7 @@ fn score(name:&str) -> u64 {
 	sum
 }
 
-pub fn go() -> String {
+fn go() -> String {
 	let mut f = File::open("data/p042_words.txt").ok().expect("file open fail");
 	let mut s = String::new();
 	f.read_to_string(&mut s).ok().expect("file read fail");
@@ -36,4 +36,4 @@ pub fn go() -> String {
 	num.to_string()
 }
 
-problem!(go);
+problem!(go, 162);

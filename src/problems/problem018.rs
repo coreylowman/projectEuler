@@ -1,4 +1,3 @@
-
 use std::cmp::max;
 
 fn rchild_index(i:usize,l:usize) -> usize {
@@ -18,7 +17,7 @@ fn index(i:usize,l:usize) -> usize {
 	sum
 }
 
-pub fn go() -> String {
+fn go() -> String {
 	let num_str = "75 \
 					95 64 \
 					17 47 82 \
@@ -53,4 +52,4 @@ pub fn go() -> String {
 	numbers[0].to_string()
 }
 
-problem!(go);
+problem!(go, 1074);

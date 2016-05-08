@@ -1,5 +1,4 @@
-
-pub fn go() -> String{	
+fn go() -> String{	
 	let mut n : Vec<u64> = vec![1];	
 	for _ in 0..1000 {
 		let mut carries : Vec<u64> = vec![0;n.len() + 1];
@@ -27,4 +26,4 @@ pub fn go() -> String{
 	sum.to_string()
 }
 
-problem!(go);
+problem!(go, 1366);

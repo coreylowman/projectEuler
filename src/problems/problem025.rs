@@ -54,7 +54,7 @@ fn num_digs(n : BigInt) -> u64 {
 	n.to_string().len() as u64
 }
 
-pub fn go() -> String {
+fn go() -> String {
 	let fib_mat = Mat::fib_mat();
 	let mut start = 4096;
 	let mut end = 8192;
@@ -82,4 +82,4 @@ pub fn go() -> String {
 	(mid + 1).to_string()
 }
 
-problem!(go);
+problem!(go, 4782);

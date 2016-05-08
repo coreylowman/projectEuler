@@ -1,4 +1,3 @@
-
 fn get_period(n : f32)-> usize {
 	if n.sqrt() == n.sqrt().floor() {
 		return 0
@@ -41,4 +40,4 @@ pub fn go() -> String {
 	num.to_string()
 }
 
-problem!(go);
+problem!(go, 1322);

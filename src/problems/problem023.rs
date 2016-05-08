@@ -1,4 +1,3 @@
-
 fn ds(n:u64) -> u64 {
 	let mut sum = 1;
 	let lim = (n as f64).sqrt() as u64 + 1;
@@ -13,7 +12,7 @@ fn ds(n:u64) -> u64 {
 	sum
 }
 
-pub fn go() -> String {
+fn go() -> String {
 	let mut abunds : Vec<bool> = Vec::new();	
 	abunds.push(false); //0
 	abunds.push(false); //1
@@ -36,4 +35,4 @@ pub fn go() -> String {
 	sum.to_string()
 }
 
-problem!(go);
+problem!(go, 4179871);

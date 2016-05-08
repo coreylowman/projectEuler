@@ -1,4 +1,3 @@
-
 use util::prime_gen;
 
 fn replace(mut n:u64,x:u64,replace : &Vec<usize>) -> u64{
@@ -64,7 +63,7 @@ fn length(mut n:u64)->usize {
 	l
 }
 
-pub fn go() -> String {
+fn go() -> String {
 	let primes = prime_gen::gen(500_000);
 	for &p in primes.iter() {
 		if p < 56000 { continue; }
@@ -76,4 +75,4 @@ pub fn go() -> String {
 	0.to_string()
 }
 
-problem!(go);
+problem!(go, 121313);

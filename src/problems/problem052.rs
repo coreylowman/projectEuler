@@ -1,4 +1,3 @@
-
 fn has(n:u64)->bool{
 	let mut digs = [0;10];
 	let mut q = n;
@@ -20,8 +19,7 @@ fn has(n:u64)->bool{
 	true
 }
 
-
-pub fn go() -> String {
+fn go() -> String {
 	let mut i = 125874u64;
 	loop {
 		if has(i) {
@@ -31,4 +29,4 @@ pub fn go() -> String {
 	}
 }
 
-problem!(go);
+problem!(go, 142857);

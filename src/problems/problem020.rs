@@ -4,7 +4,7 @@ use self::num::bigint::{ToBigInt,BigInt};
 use self::num::Zero;
 use self::num::integer::Integer;
 
-pub fn go() -> String {
+fn go() -> String {
 	let mut n = 1.to_bigint().unwrap();
 	for i in 2..101 {
 		let bi = i.to_bigint().unwrap();
@@ -20,4 +20,4 @@ pub fn go() -> String {
 	sum.to_string()
 }
 
-problem!(go);
+problem!(go, 648);

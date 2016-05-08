@@ -1,4 +1,3 @@
-
 use std::fs::File;
 use std::io::prelude::*;
 
@@ -280,7 +279,7 @@ fn get_suit(c : char) -> Suit {
 	}
 }
 
-pub fn go() -> String {
+fn go() -> String {
 	let mut f = File::open("data/p054_poker.txt").ok().expect("file open fail");
 	let mut s = String::new();
 	f.read_to_string(&mut s).ok().expect("file read fail");
@@ -299,4 +298,4 @@ pub fn go() -> String {
 	num.to_string()
 }
 
-problem!(go);
+problem!(go, 376);

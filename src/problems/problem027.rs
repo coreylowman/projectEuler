@@ -1,7 +1,6 @@
-
 use util::prime_gen;
 
-pub fn go() -> String {
+fn go() -> String {
 	let primes : Vec<i64> = prime_gen::igen(100000);
 	let primes_to_thous : Vec<i64> = prime_gen::igen(1000);
 	let mut mv = 0;
@@ -25,4 +24,4 @@ pub fn go() -> String {
 	m.to_string()
 }
 
-problem!(go);
+problem!(go, -59231);

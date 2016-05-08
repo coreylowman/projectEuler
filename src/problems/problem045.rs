@@ -1,7 +1,5 @@
 extern crate num;
 
-use util::prime_gen;
-
 fn half(n:u64) -> u64 {
 	n / 2
 }
@@ -19,7 +17,7 @@ fn h(n : u64) -> u64 {
 	n * (2u64 * n - 1u64)
 }
  
-pub fn go() -> String {
+fn go() -> String {
 	let mut ts = Vec::new();
 	let mut ps = Vec::new();
 	let mut hs = Vec::new();
@@ -38,4 +36,4 @@ pub fn go() -> String {
 	0.to_string()
 }
 
-problem!(go);
+problem!(go, 1533776805);

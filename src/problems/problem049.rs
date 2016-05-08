@@ -1,4 +1,3 @@
-
 use util::prime_gen;
  
 fn is_perm(mut n1:u64,mut n2:u64) -> bool {
@@ -20,7 +19,7 @@ fn is_perm(mut n1:u64,mut n2:u64) -> bool {
 	true
 }
  
-pub fn go() -> String {
+fn go() -> String {
 	let primes = prime_gen::gen(10_000);
 	for &p in primes.iter() {
 		let p1 = p + 3330;
@@ -33,4 +32,4 @@ pub fn go() -> String {
 	0.to_string()
 }
 
-problem!(go);
+problem!(go, 296962999629);

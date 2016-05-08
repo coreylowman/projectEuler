@@ -1,4 +1,3 @@
-
 fn is_ten_palindrome(mut num : u64) -> bool {
 	let mut b10 : Vec<u64> = Vec::new();
 	while num > 0 {
@@ -41,7 +40,7 @@ fn is_two_palindrome(mut num: u64) -> bool {
 	true
 }
 
-pub fn go() -> String {
+fn go() -> String {
 	let mut sum = 0;
 	
 	for i in 1..1_000_000 {
@@ -53,4 +52,4 @@ pub fn go() -> String {
 	sum.to_string()
 }
 
-problem!(go);
+problem!(go, 872187);

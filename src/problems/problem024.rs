@@ -12,7 +12,7 @@ fn factorial_arr(n:usize) -> Vec<u64> {
 	res
 }
 
-pub fn go() -> String {
+fn go() -> String {
 	let facts : Vec<u64> = factorial_arr(9);
 	let mut coeff = [0;10];
 	let mut num : u64 = 0;
@@ -39,4 +39,4 @@ pub fn go() -> String {
 	sum.to_string()
 }
 
-problem!(go);
+problem!(go, 2783915460);

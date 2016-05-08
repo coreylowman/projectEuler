@@ -154,3 +154,22 @@ pub fn gen(limit : i64) -> Vec<u64> {
 	}
 	primes
 }
+
+pub fn prime_factors(n:u64, primes:&Vec<u64>) -> Vec<u64> {
+	let mut factors = Vec::new();
+	if primes.binary_search(&n).is_ok() { return vec![n]; }
+	
+	let lim = (n as f64).sqrt() as u64 + 1;
+	for i in 2..lim {
+		if n % i == 0 {
+			if primes.binary_search(&i).is_ok() {
+				factors.push(i)
+			}
+			if primes.binary_search(&(n / i)).is_ok() {
+				factors.push(n / i)
+			}
+		}
+	}
+	factors
+}
+

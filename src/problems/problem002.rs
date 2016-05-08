@@ -21,7 +21,7 @@ impl Iterator for Pair {
 	}
 }
 
-pub fn go() -> String {
+fn go() -> String {
 	let mut sum : u64 = 0;
 	let fpair = Pair { t : 1, x : 1, cur : 1, max : 4000000};
 	for x in fpair {
@@ -36,4 +36,4 @@ pub fn go() -> String {
 	sum.to_string()
 }
 
-problem!(go);
+problem!(go, 4613732);

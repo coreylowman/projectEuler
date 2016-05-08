@@ -71,83 +71,105 @@ mod problem062;
 mod problem063;
 mod problem064;
 mod problem065;
+mod problem066;
 
-pub fn solve_problem(i : usize) -> ProblemResult {
-    let solvers : Vec<fn() -> ProblemResult> = vec![
-problem001::solve,
-problem002::solve,
-problem003::solve,
-problem004::solve,
-problem005::solve,
-problem006::solve,
-problem007::solve,
-problem008::solve,
-problem009::solve,
+pub struct Solver {
+    pub current : usize,
+}
 
-problem010::solve,
-problem011::solve,
-problem012::solve,
-problem013::solve,
-problem014::solve,
-problem015::solve,
-problem016::solve,
-problem017::solve,
-problem018::solve,
-problem019::solve,
+impl Solver {
+    pub fn new() -> Solver {
+        Solver {
+            current : 1
+        }
+    }
 
-problem020::solve,
-problem021::solve,
-problem022::solve,
-problem023::solve,
-problem024::solve,
-problem025::solve,
-problem026::solve,
-problem027::solve,
-problem028::solve,
-problem029::solve,
+    pub fn solve_problem(&mut self, i : usize) -> Option<ProblemResult> {
+        match i {
+            001 => Some(problem001::solve()),
+            002 => Some(problem002::solve()),
+            003 => Some(problem003::solve()),
+            004 => Some(problem004::solve()),
+            005 => Some(problem005::solve()),
+            006 => Some(problem006::solve()),
+            007 => Some(problem007::solve()),
+            008 => Some(problem008::solve()),
+            009 => Some(problem009::solve()),
 
-problem030::solve,
-problem031::solve,
-problem032::solve,
-problem033::solve,
-problem034::solve,
-problem035::solve,
-problem036::solve,
-problem037::solve,
-problem038::solve,
-problem039::solve,
+            010 => Some(problem010::solve()),
+            011 => Some(problem011::solve()),
+            012 => Some(problem012::solve()),
+            013 => Some(problem013::solve()),
+            014 => Some(problem014::solve()),
+            015 => Some(problem015::solve()),
+            016 => Some(problem016::solve()),
+            017 => Some(problem017::solve()),
+            018 => Some(problem018::solve()),
+            019 => Some(problem019::solve()),
 
-problem040::solve,
-problem041::solve,
-problem042::solve,
-problem043::solve,
-problem044::solve,
-problem045::solve,
-problem046::solve,
-problem047::solve,
-problem048::solve,
-problem049::solve,
+            020 => Some(problem020::solve()),
+            021 => Some(problem021::solve()),
+            022 => Some(problem022::solve()),
+            023 => Some(problem023::solve()),
+            024 => Some(problem024::solve()),
+            025 => Some(problem025::solve()),
+            026 => Some(problem026::solve()),
+            027 => Some(problem027::solve()),
+            028 => Some(problem028::solve()),
+            029 => Some(problem029::solve()),
 
-problem050::solve,
-problem051::solve,
-problem052::solve,
-problem053::solve,
-problem054::solve,
-problem055::solve,
-problem056::solve,
-problem057::solve,
-problem058::solve,
-problem059::solve,
+            030 => Some(problem030::solve()),
+            031 => Some(problem031::solve()),
+            032 => Some(problem032::solve()),
+            033 => Some(problem033::solve()),
+            034 => Some(problem034::solve()),
+            035 => Some(problem035::solve()),
+            036 => Some(problem036::solve()),
+            037 => Some(problem037::solve()),
+            038 => Some(problem038::solve()),
+            039 => Some(problem039::solve()),
 
-problem060::solve,
-problem061::solve,
-problem062::solve,
-problem063::solve,
-problem064::solve,
-problem065::solve
-];
-    
-    let f : fn() -> ProblemResult = solvers[i];
-    f()
+            040 => Some(problem040::solve()),
+            041 => Some(problem041::solve()),
+            042 => Some(problem042::solve()),
+            043 => Some(problem043::solve()),
+            044 => Some(problem044::solve()),
+            045 => Some(problem045::solve()),
+            046 => Some(problem046::solve()),
+            047 => Some(problem047::solve()),
+            048 => Some(problem048::solve()),
+            049 => Some(problem049::solve()),
+
+            050 => Some(problem050::solve()),
+            051 => Some(problem051::solve()),
+            052 => Some(problem052::solve()),
+            053 => Some(problem053::solve()),
+            054 => Some(problem054::solve()),
+            055 => Some(problem055::solve()),
+            056 => Some(problem056::solve()),
+            057 => Some(problem057::solve()),
+            058 => Some(problem058::solve()),
+            059 => Some(problem059::solve()),
+
+            060 => Some(problem060::solve()),
+            061 => Some(problem061::solve()),
+            062 => Some(problem062::solve()),
+            063 => Some(problem063::solve()),
+            064 => Some(problem064::solve()),
+            065 => Some(problem065::solve()),
+            066 => Some(problem066::solve()),
+            _ => None
+        }
+    }
+}
+
+impl Iterator for Solver {
+    type Item = ProblemResult;
+
+    fn next(&mut self) -> Option<ProblemResult> {
+        let i = self.current;
+        self.current = self.current + 1;
+        self.solve_problem(i)
+    }
 }
 

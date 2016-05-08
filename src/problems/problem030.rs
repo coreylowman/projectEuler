@@ -1,4 +1,3 @@
-
 fn get_digits(mut n:u64) -> Vec<u64> {
 	let mut res :Vec<u64> = Vec::new();
 	while n > 0 {
@@ -17,7 +16,7 @@ fn can_be(n :u64) -> bool {
 	sum == n
 }
 
-pub fn go() -> String {
+fn go() -> String {
 	let mut sum = 0;
 	for i in 2..1_000_000 {
 		if can_be(i) {
@@ -27,4 +26,4 @@ pub fn go() -> String {
 	sum.to_string()
 }
 
-problem!(go);
+problem!(go, 443839);

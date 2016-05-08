@@ -1,4 +1,3 @@
-
 use util::prime_gen;
  
 pub fn go() -> String {
@@ -24,4 +23,4 @@ pub fn go() -> String {
 	}
 }
 
-problem!(go);
+problem!(go, 26241);

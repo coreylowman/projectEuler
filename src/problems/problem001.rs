@@ -9,4 +9,4 @@ fn go() -> String {
     sum.to_string()
 }
 
-problem!(go);
+problem!(go, 233168);

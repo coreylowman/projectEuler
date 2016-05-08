@@ -1,4 +1,3 @@
-
 fn reverse(mut n:u64) -> u64{
 	let mut digits : Vec<u64> = Vec::new();
 	while n > 0 {
@@ -43,7 +42,7 @@ fn has(mut n:u64) -> bool {
 	false
 }
 
-pub fn go() -> String {
+fn go() -> String {
 	let mut num = 0;
 	for i in 1..10_000 {
 		if !has(i) {
@@ -53,4 +52,4 @@ pub fn go() -> String {
 	num.to_string()
 }
 
-problem!(go);
+problem!(go, 249);

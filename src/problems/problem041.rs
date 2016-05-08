@@ -1,4 +1,3 @@
-
 use util::prime_gen;
 
 fn num_length(mut a:u64) -> usize {
@@ -23,7 +22,8 @@ fn has_all(mut a:u64) -> bool{
 	
 	true
 }
-pub fn go() -> String {
+
+fn go() -> String {
 	//a number with 9 or 8 digits that is pandigital is divisible by 3
 	//as 1 +...+9 = 45 % 3 == 0
 	//and 1 + ... + 8 = 36 % 3 == 0
@@ -41,4 +41,4 @@ pub fn go() -> String {
 	}
 }
 
-problem!(go);
+problem!(go, 7652413);

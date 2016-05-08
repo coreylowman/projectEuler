@@ -1,5 +1,4 @@
-
-pub fn go() -> String {
+fn go() -> String {
 	let mut dim = 3;
 	let mut sum = 1;
 	let mut num = 3;
@@ -15,4 +14,4 @@ pub fn go() -> String {
 	sum.to_string()
 }
 
-problem!(go);
+problem!(go, 669171001);

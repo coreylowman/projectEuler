@@ -1,27 +1,12 @@
-
 use util::prime_gen;
 
 //num distinct prime factors
 fn num_dpfs(n:u64,primes:&Vec<u64>) -> u64 {
-	let mut num = 0;
-	if primes.binary_search(&n).is_ok() { return 1 }
-	
-	let lim = (n as f64).sqrt() as u64 + 1;
-	for i in 2..lim {
-		if n % i == 0 {
-			if primes.binary_search(&i).is_ok() {
-				num += 1;
-			}
-			if primes.binary_search(&(n / i)).is_ok() {
-				num += 1;
-			}
-		}		
-	}
-	num
+	prime_gen::prime_factors(n, primes).len() as u64
 }
 
-pub fn go() -> String{
-	let primes = prime_gen::gen(200_000);
+fn go() -> String{
+	let primes : Vec<u64> = prime_gen::gen(200_000);
 	let mut i = 1;
 	loop {
 		let a = num_dpfs(i,&primes) == 4;
@@ -41,4 +26,4 @@ pub fn go() -> String{
 	}
 }
 
-problem!(go);
+problem!(go, 134043);

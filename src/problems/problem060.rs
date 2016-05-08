@@ -129,4 +129,4 @@ pub fn go() -> String {
 	gr.get_max_clique().to_string()
 }
 
-problem!(go);
+problem!(go, 26033);

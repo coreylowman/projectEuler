@@ -1,4 +1,3 @@
-
 fn gcd(a:u64,b:u64) -> u64{
 	if b == 0 {
 		return a
@@ -6,7 +5,7 @@ fn gcd(a:u64,b:u64) -> u64{
 	gcd(b,a%b)
 }
 
-pub fn go() -> String {
+fn go() -> String {
 	let mut ps = [0;1001];
 	for n in 1..100 {
 		for m in (n+1)..100 {
@@ -31,4 +30,4 @@ pub fn go() -> String {
 	m.to_string()
 }
 
-problem!(go);
+problem!(go, 840);

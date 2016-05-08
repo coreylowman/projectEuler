@@ -1,9 +1,6 @@
-
-use util::prime_gen;
-
 fn p(n:u64) -> u64 { (3 * n * n - n) / 2 }
  
-pub fn go() -> String{
+fn go() -> String{
 	let mut ps = Vec::new();
 	ps.push(0);
 	
@@ -22,4 +19,4 @@ pub fn go() -> String{
 	0.to_string()
 }
 
-problem!(go);
+problem!(go, 5482660);

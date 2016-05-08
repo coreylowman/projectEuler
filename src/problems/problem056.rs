@@ -23,4 +23,4 @@ pub fn go() -> String{
 	max.to_string()
 }
 
-problem!(go);
+problem!(go, 972);

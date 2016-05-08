@@ -1,7 +1,6 @@
-
 use util::prime_gen;
 
-pub fn go() -> String {
+fn go() -> String {
 	let primes = prime_gen::gen(1_000_000);
 	let pl = primes.len();      
 	let all : u64 = primes.iter().fold(0,|acc,&item| acc + item);           
@@ -43,4 +42,4 @@ pub fn go() -> String {
 	0.to_string()
 }
 
-problem!(go);
+problem!(go, 997651);

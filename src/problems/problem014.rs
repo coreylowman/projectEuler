@@ -1,9 +1,8 @@
-
-pub fn chain_length(mut n : u64) -> u64 {	
+fn chain_length(mut n : u64) -> u64 {
 	let mut l = 0;
 	while n > 1 {
 		if n % 2 == 0 {
-			n = n >> 1;			
+			n = n >> 1;
 		}else{
 			n = 3 * n + 1;
 		}
@@ -12,7 +11,7 @@ pub fn chain_length(mut n : u64) -> u64 {
 	l
 }
 
-pub fn go() -> String {
+fn go() -> String {
 	let mut max = 0;
 	let mut max_num = 0;
 	for i in 0..1000001 {
@@ -25,4 +24,4 @@ pub fn go() -> String {
 	max_num.to_string()
 }
 
-problem!(go);
+problem!(go, 837799);

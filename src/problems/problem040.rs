@@ -1,4 +1,3 @@
-
 fn to_digs(mut n:u64)->Vec<u8> {
 	let mut d : Vec<u8> = Vec::new();
 	while n > 0 {
@@ -9,7 +8,7 @@ fn to_digs(mut n:u64)->Vec<u8> {
 	d
 }
 
-pub fn go() -> String {
+fn go() -> String {
 	let mut frac : Vec<u8> = Vec::new();
 	frac.push(0);
 	let mut i = 1;
@@ -22,4 +21,4 @@ pub fn go() -> String {
 	(frac[1] * frac[10] * frac[100] * frac[1000] * frac[10_000] * frac[100_000] * frac[1_000_000]).to_string()
 }
 
-problem!(go);
+problem!(go, 210);

@@ -1,4 +1,3 @@
-
 use std::collections::HashMap;
 
 fn t(n:u64) -> u64 { n * (n + 1) / 2 }
@@ -83,4 +82,4 @@ pub fn go() -> String{
 	0.to_string()
 }
 
-problem!(go);
+problem!(go, 28684);

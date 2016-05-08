@@ -1,4 +1,3 @@
-
 use std::thread;
 
 use util::prime_gen;

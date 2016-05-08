@@ -1,4 +1,3 @@
-
 fn choose(n:u64,r:u64)->u64 {
 	if r == 0 || r == 1 {
 		return 1u64
@@ -13,7 +12,7 @@ fn choose(n:u64,r:u64)->u64 {
 	prod
 }
 
-pub fn go() -> String {
+fn go() -> String {
 	let mut num = 0;
 	for n in 1..101 {
 		for r in 0..n/2 {
@@ -26,4 +25,4 @@ pub fn go() -> String {
 	num.to_string()
 }
 
-problem!(go);
+problem!(go, 4075);

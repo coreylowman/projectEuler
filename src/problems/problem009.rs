@@ -1,4 +1,3 @@
-
 fn gcd(a:u64,b:u64) -> u64{
 	if b == 0 {
 		return a
@@ -8,7 +7,7 @@ fn gcd(a:u64,b:u64) -> u64{
 
 //generate all pythagorean triples according to
 //http://en.wikipedia.org/wiki/Pythagorean_triple
-pub fn go() -> String{
+fn go() -> String{
 	for n in 1..100 {
 		for m in (n+1)..100 {
 			if (m - n) % 2 == 1 && gcd(m,n) == 1 {
@@ -26,4 +25,4 @@ pub fn go() -> String{
 	0.to_string()
 }
 
-problem!(go);
+problem!(go, 31875000);

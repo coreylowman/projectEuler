@@ -44,7 +44,7 @@ fn composite_length(mut n : u64,primes : &Vec<u64>) -> u64 {
 	res
 }
 
-pub fn go() -> String {
+fn go() -> String {
 	let primes = prime_gen::gen(1000);
 	let mut m = 0;
 	let mut mv = 0;
@@ -70,4 +70,4 @@ pub fn go() -> String {
 	m.to_string()
 }
 
-problem!(go);
+problem!(go, 983);

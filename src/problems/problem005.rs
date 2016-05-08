@@ -1,5 +1,4 @@
-
-pub fn go() -> String {
+fn go() -> String {
 	let factors = [2,3,5,7,11,13,17,19];
 	let mut n = 1;
 	for i in 0..factors.len() {
@@ -14,4 +13,4 @@ pub fn go() -> String {
 	(n/2).to_string()
 }
 
-problem!(go);
+problem!(go, 232792560);

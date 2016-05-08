@@ -1,4 +1,3 @@
-
 use util::prime_gen;
 
 fn can_decompose(n:u64,primes:&Vec<u64>)->bool {
@@ -13,7 +12,7 @@ fn can_decompose(n:u64,primes:&Vec<u64>)->bool {
 }
 
 
-pub fn go() -> String{
+fn go() -> String{
 	let primes = prime_gen::gen(1_000_000);
 	let mut i = 9;
 	while i < 1_000_000 {
@@ -25,4 +24,4 @@ pub fn go() -> String{
 	0.to_string()
 }
 
-problem!(go);
+problem!(go, 5777);

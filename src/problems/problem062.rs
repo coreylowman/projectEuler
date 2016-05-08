@@ -1,4 +1,3 @@
-
 fn get_digs(mut n : u64) -> [u8;10] {
 	let mut digs = [0u8;10];
 	while n > 0 {
@@ -31,4 +30,4 @@ pub fn go() -> String {
 	0.to_string()
 }
 
-problem!(go);
+problem!(go, 127035954683);

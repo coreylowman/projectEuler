@@ -1,5 +1,4 @@
-
-pub fn go() -> String {
+fn go() -> String {
 	let days = [31,28,31,30,31,30,31,31,30,31,30,31];	
 	let mut day_of_week = 1;
 	let mut num_sundays = 0;
@@ -17,4 +16,4 @@ pub fn go() -> String {
 	num_sundays.to_string()
 }
 
-problem!(go);
+problem!(go, 171);

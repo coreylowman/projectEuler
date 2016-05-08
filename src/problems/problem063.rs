@@ -25,4 +25,4 @@ pub fn go() -> String {
 	total.to_string()
 }
 
-problem!(go);
+problem!(go, 49);

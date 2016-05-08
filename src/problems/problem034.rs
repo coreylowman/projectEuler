@@ -1,5 +1,4 @@
-
-pub fn can(n:u64,facts:[usize;10]) -> bool {
+fn can(n:u64,facts:[usize;10]) -> bool {
 	let mut sum = 0;
 	let mut t = n;
 	while t > 0 {
@@ -9,7 +8,7 @@ pub fn can(n:u64,facts:[usize;10]) -> bool {
 	sum as u64 == n
 }
 
-pub fn go() -> String {
+fn go() -> String {
 	let mut facts = [0;10];
 	facts[0] = 1;
 	for i in 1..10 {
@@ -25,4 +24,4 @@ pub fn go() -> String {
 	sum.to_string()
 }
 
-problem!(go);
+problem!(go, 40730);

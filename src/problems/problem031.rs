@@ -1,4 +1,3 @@
-
 fn f(t:u64,c:usize) -> u64 {
 	let cs = [1,2,5,10,20,50,100,200];
 	if t == 0 || c == 0 {
@@ -14,8 +13,8 @@ fn f(t:u64,c:usize) -> u64 {
 	}
 }
 
-pub fn go() -> String {
+fn go() -> String {
 	f(200,7).to_string()
 }
 
-problem!(go);
+problem!(go, 73682);

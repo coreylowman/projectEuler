@@ -1,4 +1,3 @@
-
 fn has_all(mut a:u64,mut b:u64) -> bool{
 	let mut c = a * b;
 	let mut digs = [0;10];
@@ -30,7 +29,7 @@ fn has_all(mut a:u64,mut b:u64) -> bool{
 	true
 }
 
-pub fn go() -> String {
+fn go() -> String {
 	let mut res : Vec<u64> = Vec::new();
 	//1 or 2 digit number * 3 or 4 digit number = 4 digit number = 9 digits
 	for x in 1..100 {
@@ -54,4 +53,4 @@ pub fn go() -> String {
 	res.iter().fold(0,|acc,&x| acc + x).to_string()
 }
 
-problem!(go);
+problem!(go, 45228);

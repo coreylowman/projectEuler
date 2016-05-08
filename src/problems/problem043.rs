@@ -1,9 +1,8 @@
-
 //https://en.wikipedia.org/wiki/Permutation#Generation_in_lexicographic_order
 fn next_perm(mut v : [u8;10])->Option<[u8;10]>{
 	let vl = v.len();	
 	let mut i = vl-2;
-	let mut mk = 0;
+	let mut mk;
 	loop{
 		if v[i] < v[i+1] {
 			mk = i;
@@ -65,7 +64,7 @@ fn to_num(digs : [u8;10])-> u64 {
 	num
 }
 
-pub fn go() -> String{
+fn go() -> String{
 	let mut sum :u64 = 0;
 	let mut start : [u8;10] = [0,1,2,3,4,5,6,7,8,9];
 	loop{
@@ -80,4 +79,4 @@ pub fn go() -> String{
 	sum.to_string()
 }
 
-problem!(go);
+problem!(go, 16695334890);

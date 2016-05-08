@@ -1,4 +1,3 @@
-
 //http://en.wikipedia.org/wiki/English_numerals
 fn num_word_count(n : u64) -> u64{
 	let below_twenty = [0,3,3,5,4,4,3,5,5,4,3,6,6,8,8,7,7,9,8,8];
@@ -14,7 +13,7 @@ fn num_word_count(n : u64) -> u64{
 	}
 }
 
-pub fn go() -> String {
+fn go() -> String {
 	let mut sum = 0;
 	for i in 1..1000 {		
 		sum += num_word_count(i);
@@ -22,4 +21,4 @@ pub fn go() -> String {
 	(sum + 11).to_string()
 }
 
-problem!(go);
+problem!(go, 21124);

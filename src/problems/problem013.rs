@@ -1,5 +1,4 @@
-
-pub fn go() -> String {
+fn go() -> String {
 	let num_str = "\
 37107287533902102798797998220837590246510135740250\
 46376937677490009712648124896970078050417018260538\
@@ -113,4 +112,4 @@ pub fn go() -> String {
 	number.to_string()
 }
 
-problem!(go);
+problem!(go, 5537376230);

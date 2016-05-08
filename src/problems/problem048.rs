@@ -23,7 +23,7 @@ fn q(n:u64)->BigInt {
 	n.to_bigint().unwrap()
 }
 
-pub fn go() -> String {
+fn go() -> String {
 	let t10 : BigInt = q(10_000_000_000);
 	let mut sum : BigInt = q(1);
 	for i in 2..1001 {
@@ -33,4 +33,4 @@ pub fn go() -> String {
 	sum.to_string()
 }
 
-problem!(go);
+problem!(go, 9110846700);

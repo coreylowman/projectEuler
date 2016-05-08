@@ -1,4 +1,3 @@
-
 //t = t1 * 10 + t0 and same for b
 fn can(t:u32,b:u32) -> bool {
 	let t0 = t % 10;
@@ -31,10 +30,9 @@ fn gcd(mut a:u32,mut b:u32)-> u32 {
 	a
 }
 
-
 //1 1 2 1
 //4 5 5 2
-pub fn go() -> String {
+fn go() -> String {
 	let mut top = 1;
 	let mut bot = 1;
 	for t in 10..100 {
@@ -49,4 +47,4 @@ pub fn go() -> String {
 	bot.to_string()
 }
 
-problem!(go);
+problem!(go, 100);

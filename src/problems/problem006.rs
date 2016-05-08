@@ -1,5 +1,4 @@
-
-pub fn go() -> String {
+fn go() -> String {
 	let mut sum = 0;
 	let mut sumsq = 0;
 	for i in 1..101 {
@@ -9,4 +8,4 @@ pub fn go() -> String {
 	(sum * sum - sumsq).to_string()
 }
 
-problem!(go);
+problem!(go, 25164150);

@@ -36,7 +36,7 @@ fn num_length(mut n:u64) -> u64 {
 	l
 }
 
-pub fn go() -> String {
+fn go() -> String {
 	//number can't have more than 5 digits... as i.concat(2*i) would have 10 digits
 	//whereas the number we are looking for has 9
 	let mut i = 10_000;
@@ -54,4 +54,4 @@ pub fn go() -> String {
 	}
 }
 
-problem!(go);
+problem!(go, 932718654);

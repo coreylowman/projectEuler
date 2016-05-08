@@ -1,4 +1,3 @@
-
 fn is_palindrome(mut n : u64) -> bool {
 	let mut digits :Vec<i8> = Vec::new();
 	while n > 0 {
@@ -19,7 +18,7 @@ fn is_palindrome(mut n : u64) -> bool {
 	true
 }
 
-pub fn go() -> String {
+fn go() -> String {
 	let mut max = 0;
 	for x in 100..999 {
 		for y in x..999{
@@ -33,4 +32,4 @@ pub fn go() -> String {
 	max.to_string()
 }
 
-problem!(go);
+problem!(go, 906609);

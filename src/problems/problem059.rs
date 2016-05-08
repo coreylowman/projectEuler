@@ -1,4 +1,3 @@
-
 use std::fs::File;
 use std::io::prelude::*;
  
@@ -46,4 +45,4 @@ pub fn go() -> String {
 	0.to_string()
 }
 
-problem!(go);
+problem!(go, 107359);

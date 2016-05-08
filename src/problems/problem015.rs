@@ -1,4 +1,3 @@
-
 /*
 starting at top right you need 2 moves right and 2 moves down...
 so the number of permutations of RRDD is the total number of ways
@@ -35,4 +34,4 @@ pub fn go() -> String {
 	(4 * 39 * 37 * 11 * 31 * 29 * 5 * 23 * 21 as u64).to_string()
 }
 
-problem!(go);
+problem!(go, 137846528820);
