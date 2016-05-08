@@ -1,25 +1,25 @@
 extern crate num;
 
-use self::num::bigint::{ToBigInt,BigInt};
+use self::num::bigint::{ToBigInt, BigInt};
 
-fn num_digs(n:&BigInt) -> u64{
-	n.to_string().len() as u64
+fn num_digs(n: &BigInt) -> u64 {
+    n.to_string().len() as u64
 }
 
 pub fn go() -> String {
-	let mut num = 0u64;
-	let mut t = 1.to_bigint().unwrap();
-	let mut b = 2.to_bigint().unwrap();
-	for _ in 0..1000 {
-		let a = &b + &t;
-		if num_digs(&a) > num_digs(&b) {
-			num += 1;
-		}
-		let q : BigInt =  &b + a;
-		t = b;
-		b = q;
-	}
-	num.to_string()
+    let mut num = 0u64;
+    let mut t = 1.to_bigint().unwrap();
+    let mut b = 2.to_bigint().unwrap();
+    for _ in 0..1000 {
+        let a = &b + &t;
+        if num_digs(&a) > num_digs(&b) {
+            num += 1;
+        }
+        let q: BigInt = &b + a;
+        t = b;
+        b = q;
+    }
+    num.to_string()
 }
 
 problem!(go, 153);

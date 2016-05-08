@@ -1,23 +1,23 @@
 use util::numbers::next_perm;
 
 struct GonRing {
-    size : usize,
-    data : Vec<u8>,
-    min_external_line : usize,
+    size: usize,
+    data: Vec<u8>,
+    min_external_line: usize,
 }
 
 impl GonRing {
-    pub fn new(size_arg : u8) -> GonRing {
+    pub fn new(size_arg: u8) -> GonRing {
         let mut q = GonRing {
-            size : size_arg as usize,
-            data : (1..2 * size_arg + 1).collect(),
-            min_external_line : 0,
+            size: size_arg as usize,
+            data: (1..2 * size_arg + 1).collect(),
+            min_external_line: 0,
         };
         q.min_external_line = q.calculate_min_external_line();
         q
     }
 
-    fn get_node_on_line(&self, line : usize, node : usize) -> u8 {
+    fn get_node_on_line(&self, line: usize, node: usize) -> u8 {
         match node {
             0 => self.data[line],
             1 => self.data[(line + 1) % self.size],
@@ -27,12 +27,15 @@ impl GonRing {
                 } else {
                     self.data[line + self.size + 1]
                 }
-            },
-            _ => { println!("error"); 0 },
+            }
+            _ => {
+                println!("error");
+                0
+            }
         }
     }
 
-    fn sum_of_line(&self, line : usize) -> u8 {
+    fn sum_of_line(&self, line: usize) -> u8 {
         let mut sum = 0;
         sum += self.get_node_on_line(line, 0);
         sum += self.get_node_on_line(line, 1);
@@ -48,7 +51,7 @@ impl GonRing {
 
     pub fn is_solution(&self) -> bool {
         let line_sum = self.sum_of_line(0);
-        
+
         for i in 1..self.size {
             if line_sum != self.sum_of_line(i) {
                 return false;
@@ -80,7 +83,7 @@ impl GonRing {
             res.push(self.get_node_on_line(i, 0));
             if i == 0 {
                 i = self.size - 1;
-            }else {
+            } else {
                 i -= 1;
             }
             if i == self.min_external_line {
@@ -91,24 +94,24 @@ impl GonRing {
         res
     }
 
-    pub fn is_greater_than(&mut self, other : &Vec<u8>) -> bool {
+    pub fn is_greater_than(&mut self, other: &Vec<u8>) -> bool {
         let self_vec = self.to_vec();
 
         for i in 0..other.len() {
             if self_vec[i] > other[i] {
-                return true
+                return true;
             } else if self_vec[i] < other[i] {
-                return false
+                return false;
             }
         }
 
-        return true
+        return true;
     }
 }
 
 fn go() -> String {
     let mut ring = GonRing::new(5);
-    let mut max_ring_vec : Vec<u8> = Vec::new();
+    let mut max_ring_vec: Vec<u8> = Vec::new();
 
     while ring.rotate() {
         if ring.is_solution() && ring.is_greater_than(&max_ring_vec) {

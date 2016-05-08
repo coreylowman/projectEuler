@@ -3,34 +3,32 @@ use std::io::Read;
 use std::cmp::max;
 
 struct Triangle {
-    data : Vec<Vec<u32>>
+    data: Vec<Vec<u32>>,
 }
 
 impl Triangle {
     pub fn new() -> Triangle {
-        Triangle {
-            data : Vec::new()
-        }
+        Triangle { data: Vec::new() }
     }
 
     pub fn num_rows(&self) -> usize {
         self.data.len()
     }
 
-    pub fn add_row(&mut self, row : Vec<u32>){
+    pub fn add_row(&mut self, row: Vec<u32>) {
         assert_eq!(self.data.len() + 1, row.len());
         self.data.push(row);
     }
 
-    fn rchild(&self, i :usize, level : usize) -> u32 {
+    fn rchild(&self, i: usize, level: usize) -> u32 {
         self.data[level + 1][i + 1]
     }
 
-    fn lchild(&self, i :usize, level : usize) -> u32 {
+    fn lchild(&self, i: usize, level: usize) -> u32 {
         self.data[level + 1][i]
     }
 
-    pub fn eat_lower_level(&mut self, level : usize) {
+    pub fn eat_lower_level(&mut self, level: usize) {
         for i in 0..self.data[level].len() {
             // loop through each element in the level
             // take max of two children beneath it
@@ -57,7 +55,7 @@ fn go() -> String {
         triangle.add_row(row_string.split(' ').filter_map(|x| x.parse().ok()).collect());
     }
 
-    let mut level : isize = (triangle.num_rows() - 2) as isize;
+    let mut level: isize = (triangle.num_rows() - 2) as isize;
     while level >= 0 {
         triangle.eat_lower_level(level as usize);
         level = level - 1;

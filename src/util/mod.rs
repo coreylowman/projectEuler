@@ -7,17 +7,17 @@ use std::time::Duration;
 
 #[derive(Clone)]
 pub struct ProblemResult {
-    pub id : String,
-    pub elapsed : Duration,
-    pub result : String,
+    pub id: String,
+    pub elapsed: Duration,
+    pub result: String,
 }
 
 impl ProblemResult {
-    pub fn new(id_arg : String, elapsed_arg : Duration, result_arg : String) -> ProblemResult {
+    pub fn new(id_arg: String, elapsed_arg: Duration, result_arg: String) -> ProblemResult {
         ProblemResult {
-            id : id_arg,
-            elapsed : elapsed_arg,
-            result : result_arg,
+            id: id_arg,
+            elapsed: elapsed_arg,
+            result: result_arg,
         }
     }
 }

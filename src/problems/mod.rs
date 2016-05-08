@@ -76,17 +76,15 @@ mod problem067;
 mod problem068;
 
 pub struct Solver {
-    pub current : usize,
+    pub current: usize,
 }
 
 impl Solver {
     pub fn new() -> Solver {
-        Solver {
-            current : 1
-        }
+        Solver { current: 1 }
     }
 
-    pub fn solve_problem(&mut self, i : usize) -> Option<ProblemResult> {
+    pub fn solve_problem(&mut self, i: usize) -> Option<ProblemResult> {
         match i {
             001 => Some(problem001::solve()),
             002 => Some(problem002::solve()),
@@ -162,7 +160,7 @@ impl Solver {
             066 => Some(problem066::solve()),
             067 => Some(problem067::solve()),
             068 => Some(problem068::solve()),
-            _ => None
+            _ => None,
         }
     }
 }
@@ -176,4 +174,3 @@ impl Iterator for Solver {
         self.solve_problem(i)
     }
 }
-
